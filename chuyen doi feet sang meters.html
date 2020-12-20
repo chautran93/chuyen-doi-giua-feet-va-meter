@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="number" id="enternumber" oninput="change()">
+        <select id="select">
+            <option value="feet">feet</option>
+            <option value="meter">meter</option>
+        </select>
+        <input type="button" name="" id="" value="=" onclick="myclick()">
+        <p><span id="result"></span></p>
+    </form>
+    <script>
+        function change() {
+            let number = document.getElementById('enternumber').value;
+            number = parseFloat(number);
+            return number;
+
+        }
+        function select1() {
+            let a = document.getElementById('select').value;
+            return a;
+        }
+        function myclick() {
+            let selectA = select1();
+            let b = change();
+            b = parseFloat(b);
+            // console.log(b);
+            let results;
+            if (selectA == "feet") {
+                results = 0.305 * b;
+            } else if (selectA == "meter") {
+                results = 3.279 * b;
+                
+            }
+            document.getElementById('result').innerHTML += results;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
